@@ -1,0 +1,55 @@
+"nome_produto_aereo";"nome_produto_codemge";"score"
+Açúcar;Açúcares;0.6
+Alimentos processados;Alimentos processados;1.0
+Animais vivos;Animais vivos;1.0
+Bebidas - Cervejas de malte;Bebidas - Cervejas de malte;1.0
+Bebidas - Cervejas de malte;Bebidas exceto cervejas de malte;0.78125
+Bebidas exceto cervejas de malte;Bebidas - Cervejas de malte;0.78125
+Bebidas exceto cervejas de malte;Bebidas exceto cervejas de malte;1.0
+Borracha e suas obras;Borracha e suas obras;1.0
+Borracha e suas obras;Plásticos e suas obras;0.38709676
+Borracha e suas obras;Metais e suas obras;0.42857143
+Carnes;Carnes;1.0
+Cosméticos e perfumaria;Cosméticos;0.4347826
+Etanol;Etanol;1.0
+Farelos;Farelos;1.0
+Fármacos;Fármacos;1.0
+Fertilizantes;Fertilizantes;1.0
+Gás Natural;Gás Natural;1.0
+Instrumentos e equipamentos profissionais;Instrumentos e equipamentos profissionais;1.0
+Leite, laticínios e derivados animais;Laticínios;0.31428573
+Máquinas e equipamentos elétricos;Máquinas e equipamentos eletricos;0.8181818
+Máquinas e equipamentos elétricos;Máquinas e equipamentos mecânicos;0.6666667
+Máquinas e equipamentos mecânicos;Máquinas e equipamentos eletricos;0.6666667
+Máquinas e equipamentos mecânicos;Máquinas e equipamentos mecânicos;1.0
+Máquinas pesadas;Máquinas pesadas;1.0
+Metais e suas obras;Plásticos e suas obras;0.41379312
+Metais e suas obras;Borracha e suas obras;0.42857143
+Metais e suas obras;Metais e suas obras;1.0
+Milho;Milho em grão;0.42857143
+Minério de ferro;Minério de ferro;1.0
+Minério de ferro;Subprodutos do minério de ferro;0.5483871
+Mobiliário;Mobiliário;1.0
+Obras de ferro fundido, ferro ou aço;Obras de ferro fundido, ferro ou aço;1.0
+Óleo diesel;Óleo diesel;1.0
+Outros cereais e produtos agrícolas;Outros cereais e produtos agrícolas;1.0
+Outros CGC;Outros minerais;0.35
+Outros CGC;Outros CGC;1.0
+Outros CGC;Outros CGNC;0.64285713
+Outros minerais;Outros minerais;1.0
+Outros minerais;Outros CGNC;0.33333334
+Outros minerais;Outros CGC;0.35
+Papel;Papel;1.0
+Petroquímicos;Petroquímicos;1.0
+Plásticos e suas obras;Plásticos e suas obras;1.0
+Plásticos e suas obras;Borracha e suas obras;0.38709676
+Plásticos e suas obras;Metais e suas obras;0.41379312
+Produtos da indústra gráfica;Produtos da indústra gráfica;1.0
+Produtos químicos industriais;Produtos químicos orgânicos;0.4722222
+Produtos químicos industriais;Produtos químicos industriais;1.0
+Produtos químicos orgânicos;Produtos químicos orgânicos;1.0
+Produtos químicos orgânicos;Produtos químicos industriais;0.4722222
+Soja;Soja em grão;0.3846154
+Subprodutos do minério de ferro;Minério de ferro;0.5483871
+Subprodutos do minério de ferro;Subprodutos do minério de ferro;1.0
+Veículos;Veículos;1.0
