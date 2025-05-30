@@ -1,7 +1,8 @@
 -- CRIANDO TABELA DE MACRO PRODUTO PELTMG PARA RELACIONAR MATRIZ AEREA
-create materialized view matriz_cargas_codemge.matriz_2019_completa_macroprod_infra_codemge_pnl_ratio as 
+create materialized view matriz_cargas_codemge.mvw_matriz_2019_completa_ratio_utp_macroproduto as 
 with matriz_completa_pnl as (
-    select zp1.id_utp as utp_o,
+    select 
+        zp1.id_utp as utp_o,
         zp2.id_utp as utp_d,
         mcm.zona_pnl_origem,
         mcm.zona_pnl_destino,
@@ -21,7 +22,8 @@ with matriz_completa_pnl as (
     from matriz_completa_pnl mcp
     GROUP BY mcp.utp_o, mcp.utp_d, mcp.id_macroproduto_peltmg
 ), ratio_ton as (
-    select mc.utp_o,
+    select 
+        mc.utp_o,
         mc.utp_d,
         mc.zona_pnl_origem,
         mc.zona_pnl_destino,

@@ -1,21 +1,43 @@
 -- PEGANDO MATRIZ AEREA EXPANDIDA POR UTP E EXPANDINDO NOVAMENTE PARA ZONA PNL
 create materialized view matriz_cargas_codemge.mvw_matriz_aerea_corrigida as 
+with zona_pnl_uf as (
+	select 
+		cast(zp.id_utp as text) as id_utp,
+		am.id_uf
+	from matriz_cargas_codemge.zona_pnl zp
+	left join on matriz_cargas_codemge.vw_agregacao_municipio am (
+		zp.id_utp = am.id_utp
+	)
+), matriz_aerea_expandida_udp_cvt as (
+	select 
+		cast(maeu.utp_o as integer), 
+		cast(maeu.utp_d as integer), 
+		maeu.id_macroproduto_peltmg, 
+		maeu.tonelada
+	from matriz_cargas_codemge.matriz_aerea_expandida_udp maeu
+)
 select 
 	maeu.utp_o, 
 	maeu.utp_d, 
 	mcmicpr.zona_pnl_origem,
 	mcmicpr.zona_pnl_destino,
+	zp1.id_utp as uf_o,
+	zp2.id_utp as uf_d,
 	maeu.id_macroproduto_peltmg, 
 	SUM(maeu.tonelada * mcmicpr.ton_ratio) as tonelada
-from matriz_cargas_codemge.matriz_aerea_expandida_udp maeu
+from matriz_aerea_expandida_udp_cvt maeu
 left join matriz_cargas_codemge.matriz_2019_completa_macroprod_infra_codemge_pnl_ratio mcmicpr on (
-	cast(maeu.utp_o as text) = mcmicpr.utp_o and
-	cast(maeu.utp_d as text) = mcmicpr.utp_d and
+	maeu.utp_o = mcmicpr.utp_o and
+	maeu.utp_d  = mcmicpr.utp_d and
 	maeu.id_macroproduto_peltmg = mcmicpr.id_macroproduto_peltmg
 )
+left join zona_pnl_uf zp1 on zp1.id_utp = maeu.utp_o
+left join zona_pnl_uf zp2 on zp2.id_utp = maeu.utp_d
 group by 
 	maeu.utp_o,
 	maeu.utp_d,
 	mcmicpr.zona_pnl_origem,
 	mcmicpr.zona_pnl_destino,
+	zp1.id_utp,
+	zp2.id_utp,
 	maeu.id_macroproduto_peltmg
