@@ -32,10 +32,11 @@ with matriz_completa_pnl as (
         mc.valor / NULLIF(azp.valor, 0) as val_ratio
     from matriz_completa_pnl mc
     left join agrupamento_mc azp on azp.utp_o = mc.utp_o and azp.utp_d = mc.utp_d and azp.id_macroproduto_peltmg = mc.id_macroproduto_peltmg
+    where mc.utp_o <> '' and mc.utp_d <> ''
 )
 select 
-	utp_o,
-    utp_d,
+	cast(utp_o as integer),
+    cast(utp_d as integer),
     zona_pnl_origem,
     zona_pnl_destino,
     id_macroproduto_peltmg,
